@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metro news training</title>
+
+    <!-- icon -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="/public/css/output.css" />
+  </head>
+  <body class="bg-[#EAEAEA] overflow-x-hidden">
+    <!-- line header -->
+    <div class="w-screen bg-gray-800 h-11"></div>
+
+    <!-- container -->
+    <div class="md:container mx-auto bg-white md:pt-1">
+      <!-- ---------------- -->
+      <!-- logo, search, btn-sign-in -->
+      <div
+        class="lg:flex md:justify-between md:items-center mt-8  md:block hidden"
+      >
+        <!-- logo section -->
+        <img src="/public/img/logo/logo.svg" alt="logo" class="w-40 h-10" />
+
+        <!-- search section -->
+        <div class="flex items-center justify-around md:mr-[10px]">
+          <label class="relative block mr-5">
+            <span class="sr-only">Search</span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+              <ion-icon
+                name="search-outline"
+                class="text-gray-400 text-xl"
+              ></ion-icon>
+            </span>
+            <input
+              class="placeholder:italic placeholder:text-slate-400 block bg-white border-2 border-gray-400 rounded-md py-2 pl-9 pr-3 w-80 shadow-sm focus:outline-none focus:border-blue-900 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+              placeholder="Cari Berita..."
+              type="text"
+              name="search"
+            />
+          </label>
+
+          <!-- sign-in section -->
+          <button
+            type="button"
+            class="text-gray-900 bg-white border-2 border-blue-900 focus:outline-none hover:bg-blue-900 hover:text-white focus:ring-4 focus:ring-gray-200 font-medium rounded-md text-sm px-5 w-28 h-10 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          >
+            Sign Up
+          </button>
+        </div>
+      </div>
+
+      <!-- navbar section-->
+      <nav class="bg-blue-900 p-[15px] md:flex md:items-center md:mt-[25px]">
+        <!-- list menu -->
+        <ul
+          class="md:flex md:items-center z-[1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in group duration-500"
+        >
+          <div class="w-4 h-4 bg-white rounded-full"></div>
+          <li class="mx-4 my-6 md:my-0">
+            <a
+              href=""
+              class="text-sm hover:bg-[#063764] py-4 px-[7px] duration-500 text-white font-black group-duration-500"
+            >
+              LIVE MGN TV</a
+            >
+          </li>
+          <li class="mx-4 my-6 md:my-0 hover:bg-blue">
+            <a
+              href=""
+              class="text-sm hover:bg-[#063764] py-4 px-[7px] duration-500 text-white font-black group-duration-500"
+              >BN CHANNEL</a
+            >
+          </li>
+          <li class="mx-4 my-6 md:my-0 hover:bg-blue">
+            <a
+              href=""
+              class="text-sm hover:bg-[#063764] py-4 px-[7px] duration-500 text-white font-black group-duration-500"
+              >NEWS</a
+            >
+          </li>
+          <li class="mx-4 my-6 md:my-0 hover:bg-blue">
+            <a
+              href=""
+              class="text-sm hover:bg-[#063764] py-4 px-[7px] duration-500 text-white font-black group-duration-500"
+              >PRGRAMS</a
+            >
+          </li>
+          <li class="mx-4 my-6 md:my-0 hover:bg-blue">
+            <a
+              href=""
+              class="text-sm hover:bg-[#063764] py-4 px-[7px] duration-500 text-white font-black group-duration-500"
+              >LOCAL NEWS</a
+            >
+          </li>
+          <li class="mx-4 my-6 md:my-0 hover:bg-blue">
+            <a
+              href=""
+              class="text-sm hover:bg-[#063764] py-4 px-[7px] duration-500 text-white font-black group-duration-500"
+              >ANCHOR</a
+            >
+          </li>
+          <li class="mx-4 my-6 md:my-0 hover:bg-blue">
+            <a
+              href=""
+              class="text-sm hover:bg-[#063764] py-4 px-[7px] duration-500 text-white font-black group-duration-500"
+              >LAINNYA</a
+            >
+          </li>
+        </ul>
+
+        <!-- breakpoint -->
+        <div class="flex justify-between items-center md:hidden">
+          <img
+            src="/public/img/logo/logomb.png"
+            alt=""
+            class="h-11 p-2 inline"
+          />
+
+          <span class="text-4xl text-white cursor-pointer mx-2 block">
+            <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+          </span>
+        </div>
+      </nav>
+
+      <!-- breadchrumbs -->
+      <div
+        class="lg:flex space-x-3 lg::ml-1 mt-6 text-base md:block hidden lg:ml-7"
+      >
+        <a href="" class="text-gray-400 hover:text-blue-700">HOME</a>
+        <div class="text-gray-400">|</div>
+        <a href="" class="text-gray-400 hover:text-blue-700">NEWS</a>
+      </div>
+
+      <!-- Hero section -->
+      <div
+        class="lg:flex-row lg:items-center md:items-center lg:justify-around lg:flex-none flex flex-col"
+      >
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- side bar left -->
+        <div
+          class="max-w-full md:flex-col flex mx-5 my-10 gap-5 lg:order-1 sm:order-2 order-2"
+        >
+          <!-- sidebar left 1 -->
+          <div class="flex flex-col space-y-4 items-start justify-start">
+            <img
+              src="https://source.unsplash.com/600x400?health"
+              alt=""
+              class="w-full h-36 rounded sm:object-cover object-cover"
+            />
+            <h3 class="text-lg font-semibold">KESEHATAN</h3>
+            <div class="w-28 h-1 bg-blue-900 rounded-sm"></div>
+            <p class="text-sm">
+              Langsung minum setelah makan ternyata berbahaya bagi kesehatan
+            </p>
+          </div>
+
+          <!-- sidebar left 2 -->
+          <div
+            class="flex flex-col space-y-4 items-start justify-start md:mt-5"
+          >
+            <img
+              src="https://source.unsplash.com/600x400?consumer"
+              alt=""
+              class="w-full h-36 rounded object-cover sm:object-cover"
+            />
+            <h3 class="text-lg font-semibold">KONSUMEN</h3>
+            <div class="w-28 h-1 bg-blue-900 rounded-sm"></div>
+            <p class="text-sm">
+              Siap-siap Nomor Rekening Bank Bakal Dihapus, Ini Gantinya!
+            </p>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------------------------------------------------------------- -->
+        <!-- sidebar middle section -->
+        <div
+          class="rounded-md flex flex-col justify-end lg:w-[900px] md:h-[600px] sm:h-[400px] my-6 grow sm:mx-5 mx-3 md:object-cover sm:object-cover object-cover h-[250px] lg:order-2 sm:order-1 order-1"
+          style="background: url(https://source.unsplash.com/800x800)"
+        >
+          <div class="my-10 mx-5">
+            <div class="w-44 h-10 mb-4 hidden md:block sm:block">
+              <div
+                class="flex items-center justify-center flex-1 h-full py-2.5 pl-4 md:pr-3.5 bg-blue-900 rounded-tl rounded-tr shadow-lg"
+                style="box-shadow: 0 9px 0 rgb(47, 32, 32)"
+              >
+                <p class="flex-1 h-full text-lg font-semibold text-white">
+                  BERITA TERATAS
+                </p>
+              </div>
+            </div>
+
+            <p
+              class="md:text-2xl sm:text-xl text-white font-extrabold mt-6 mb-4 text-sm"
+            >
+              Longsor Batu di Cadas Pangeran, Polres Sumedang Langsung Amankan
+              Lokasi
+            </p>
+
+            <div class="flex">
+              <div class="flex md:ml-3 sm:ml-2">
+                <ion-icon
+                  name="time-outline"
+                  class="text-white sm:text-xl"
+                ></ion-icon>
+                <p class="pl-3 sm:text-base text-white text-xs">
+                  1 Jam yang lalu
+                </p>
+              </div>
+
+              <div class="flex ml-3">
+                <ion-icon
+                  name="open-outline"
+                  class="text-white sm:text-xl"
+                ></ion-icon>
+                <p class="pl-3 sm:text-base text-white text-xs">
+                  Selamat pagi Indonesia
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar right section -->
+        <div
+          class="md:flex md:flex-col sm:mx-6 mx-4 box-border flex-none lg:order-3 sm:order-3 order-3"
+        >
+          <div
+            class="md:w-80 md:h-3.5 sm:h-2.5 bg-blue-900 rounded-tl-md rounded-tr-md h-2"
+          ></div>
+          <div
+            class="flex md:space-x-10 items-center md:w-80 h-6 mt-4 sm:justify-between sm:w-full justify-between md:mx-0"
+          >
+            <p class="text-lg font-semibold">BERITA PILIHAN</p>
+            <p class="text-sm text-blue-900">Lihat semua</p>
+          </div>
+
+          <div
+            class="flex md:space-x-1 sm:justify-between items-center justify-start"
+          >
+            <div
+              class="flex flex-col md:space-y-2 md:pl-5 pt-5 md:max-w-[180px] sm:max-w-[350px]"
+            >
+              <p class="w-full h-20 text-base font-medium text-gray-800">
+                Berita Persebaya Hari Ini Populer: Harapan Aji Santoso Soal..
+              </p>
+
+              <div class="flex items-center justify-start space-x-1">
+                <ion-icon name="time-outline" class="text-gray-400"></ion-icon>
+                <p class="text-xs font-medium text-gray-400">11 Jam Lalu</p>
+              </div>
+            </div>
+
+            <img
+              src="https://source.unsplash.com/125x100?sport"
+              class="rounded-md max-w-[125px]"
+            />
+          </div>
+
+          <div
+            class="flex md:space-x-1 sm:justify-between items-center justify-start"
+          >
+            <div
+              class="flex flex-col md:space-y-2 md:pl-5 pt-5 md:max-w-[180px] sm:max-w-[350px]"
+            >
+              <p class="w-full h-20 text-base font-medium text-gray-800">
+                Berita Persebaya Hari Ini Populer: Harapan Aji Santoso Soal..
+              </p>
+
+              <div class="flex items-center justify-start space-x-1">
+                <ion-icon name="time-outline" class="text-gray-400"></ion-icon>
+                <p class="text-xs font-medium text-gray-400">11 Jam Lalu</p>
+              </div>
+            </div>
+
+            <img
+              src="https://source.unsplash.com/125x100?politic"
+              class="rounded-md max-w-[125px]"
+            />
+          </div>
+
+          <div
+            class="flex md:space-x-1 sm:justify-between items-center justify-start"
+          >
+            <div
+              class="flex flex-col md:space-y-2 md:pl-5 pt-5 md:max-w-[180px] sm:max-w-[350px]"
+            >
+              <p class="w-full h-20 text-base font-medium text-gray-800">
+                Berita Persebaya Hari Ini Populer: Harapan Aji Santoso Soal..
+              </p>
+
+              <div class="flex items-center justify-start space-x-1">
+                <ion-icon name="time-outline" class="text-gray-400"></ion-icon>
+                <p class="text-xs font-medium text-gray-400">11 Jam Lalu</p>
+              </div>
+            </div>
+
+            <img
+              src="https://source.unsplash.com/125x100?soccers"
+              class="rounded-md max-w-[125px]"
+            />
+          </div>
+
+          <div
+            class="flex md:space-x-1 sm:justify-between items-center justify-start"
+          >
+            <div
+              class="flex flex-col md:space-y-2 md:pl-5 pt-5 md:max-w-[180px] sm:max-w-[350px]"
+            >
+              <p class="w-full h-20 text-base font-medium text-gray-800">
+                Berita Persebaya Hari Ini Populer: Harapan Aji Santoso Soal..
+              </p>
+
+              <div class="flex items-center justify-start space-x-1">
+                <ion-icon name="time-outline" class="text-gray-400"></ion-icon>
+                <p class="text-xs font-medium text-gray-400">11 Jam Lalu</p>
+              </div>
+            </div>
+
+            <img
+              src="https://source.unsplash.com/125x100?news"
+              class="rounded-md max-w-[125px]"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- --------------------------------------- -->
+
+      <!-- POST Section -->
+      <div class="bg-white-200">
+        <div
+          class="grid grid-cols-12 gap-x-5 lg:max-w-full lg:px-7 mt-10 sm:px-5 mx-5"
+        >
+          <h4
+            class="col-span-10 md:text-2xl text-lg font-black tracking-tight text-gray-900"
+          >
+            JANGAN LEWATKAN
+          </h4>
+          <a
+            href="#!"
+            class="col-span-2 text-indigo-900 hover:text-indigo-900 transition duration-300 ease-in-out mb-4 style text-sm"
+            style="text-align: right"
+            >Lihat Semua</a
+          >
+        </div>
+
+        <div
+          class="mx-auto max-w-2xl sm:max-w-full py-2 px-4 sm:py-2 sm:px-8 lg:max-w-full lg:px-8"
+        >
+          <div class="float-left w-40 h-2 mx-auto mt-120">
+            <div class="w-full h-full rounded-md bg-indigo-900"></div>
+          </div>
+
+          <div
+            class="mt-10 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4"
+          >
+            <div class="group relative">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="/public/img/post/1.jpg" />
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2">Peristiwa</div>
+                  <div class="float-left w-20 h-1 mx-auto mt-120">
+                    <div class="w-full h-full bg-indigo-900"></div>
+                  </div>
+
+                  <p class="text-gray-700 text-base mt-6">
+                    Geger, Enam Makam Cina Dibongkar Pencuri yang kurang sopan
+                  </p>
+                  <div class="pt-2 text-gray-400 text-sm">
+                    <span class>1 Oktober 2022</span>
+                    <span class>Metro Xinwen</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/public/img/post/2.jpg" />
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Peristiwa</div>
+                <div class="float-left w-20 h-1 mx-auto mt-120">
+                  <div class="w-full h-full bg-indigo-900"></div>
+                </div>
+
+                <p class="text-gray-00 text-base mt-6">
+                  Aniaya Sopir Truk Proyek Tol Cisumdawu, Dua Preman Diringkus
+                  Petugas
+                </p>
+                <div class="pt-2 text-gray-400 text-sm">
+                  <span class>1 Oktober 2022</span>
+                  <span class>Metro Xinwen</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/public/img/post/3.jpg" />
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Peristiwa</div>
+                <div class="float-left w-20 h-1 mx-auto mt-120">
+                  <div class="w-full h-full bg-indigo-900"></div>
+                </div>
+
+                <p class="text-gray-700 text-base mt-6">
+                  Bak Film Aksi Hollywood, Penyergapan Dua Pencuri di GT Pasir
+                  Koja Berlangsung..
+                </p>
+                <div class="pt-2 text-gray-400 text-sm">
+                  <span class>1 Oktober 2022</span>
+                  <span class>Metro Xinwen</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/public/img/post/4.jpg" />
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Peristiwa</div>
+                <div class="float-left w-20 h-1 mx-auto mt-120">
+                  <div class="w-full h-full bg-indigo-900"></div>
+                </div>
+
+                <p class="text-gray-700 text-base mt-6">
+                  Geger, Orang Gila Bakar Angkot Sampai Hangus Tak Bersisa di
+                  Jakarta barat
+                </p>
+                <div class="pt-2 text-gray-400 text-sm">
+                  <span class>1 Oktober 2022</span>
+                  <span class>Metro Xinwen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+          >
+            <div class="group relative">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="/public/img/post/1.jpg" />
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2">Peristiwa</div>
+                  <div class="float-left w-20 h-1 mx-auto mt-120">
+                    <div class="w-full h-full bg-indigo-900"></div>
+                  </div>
+
+                  <p class="text-gray-700 text-base mt-6">
+                    Geger, Enam Makam Cina Dibongkar Pencuri yang kurang sopan
+                  </p>
+                  <div class="pt-2 text-gray-400 text-sm">
+                    <span class>1 Oktober 2022</span>
+                    <span class>Metro Xinwen</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/public/img/post/2.jpg" />
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Peristiwa</div>
+                <div class="float-left w-20 h-1 mx-auto mt-120">
+                  <div class="w-full h-full bg-indigo-900"></div>
+                </div>
+
+                <p class="text-gray-700 text-base mt-6">
+                  Aniaya Sopir Truk Proyek Tol Cisumdawu, Dua Preman Diringkus
+                  Petugas
+                </p>
+                <div class="pt-2 text-gray-400 text-sm">
+                  <span class>1 Oktober 2022</span>
+                  <span class>Metro Xinwen</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/public/img/post/3.jpg" />
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Peristiwa</div>
+                <div class="float-left w-20 h-1 mx-auto mt-120">
+                  <div class="w-full h-full bg-indigo-900"></div>
+                </div>
+
+                <p class="text-gray-700 text-base mt-6">
+                  Bak Film Aksi Hollywood, Penyergapan Dua Pencuri di GT Pasir
+                  Koja Berlangsung..
+                </p>
+                <div class="pt-2 text-gray-400 text-sm">
+                  <span class>1 Oktober 2022</span>
+                  <span class>Metro Xinwen</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/public/img/post/4.jpg" />
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Peristiwa</div>
+                <div class="float-left w-20 h-1 mx-auto mt-120">
+                  <div class="w-full h-full bg-indigo-900"></div>
+                </div>
+
+                <p class="text-gray-700 text-base mt-6">
+                  Geger, Orang Gila Bakar Angkot Sampai Hangus Tak Bersisa di
+                  Jakarta barat
+                </p>
+                <div class="pt-2 text-gray-400 text-sm">
+                  <span class>1 Oktober 2022</span>
+                  <span class>Metro Xinwen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
